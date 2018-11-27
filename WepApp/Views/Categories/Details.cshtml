@@ -1,0 +1,34 @@
+﻿@model NorthWind.Entities.Category
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateOrDelete" >
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <input asp-for="CategoryId" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryName" class="control-label"></label>
+                <input asp-for="CategoryName" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="btnEdit" value="Edit" class="btn btn-primary"/>
+                <input type="submit" name="btnDelete" value="Delete" class="btn btn-warning"/>
+                <a asp-action="Index" class="btn btn-default">Back to Index.</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+   
+</div>
+
+
+ 

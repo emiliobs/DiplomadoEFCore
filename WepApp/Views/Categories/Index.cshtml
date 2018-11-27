@@ -1,0 +1,59 @@
+﻿@model List<NorthWind.Entities.Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Categories</h1>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+
+@ViewData["Error"]
+
+<form method="post">
+    <div>
+        <h2>Nombre de Categorías</h2>
+    </div>
+
+    <div>
+        <input type="text" name="categoryName" class="form-control" style="width: 200px; align-content: center;"/>
+        <br/>
+        <input type="submit" value="Crear" class="btn btn-warning"/>
+    </div>
+
+
+
+</form>
+<hr/>
+<table class="table table-hover">
+    <thead>
+    <th>ID</th>
+    <th>Name</th>
+    </thead>
+    <tbody>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td><a asp-action="Details" asp-controller="Categories" asp-route-Id="@c.CategoryId">@c.CategoryId</a></td>
+            <td><a asp-action="Details" asp-controller="Categories" asp-route-Id="@c.CategoryId">@c.CategoryName</a></td>
+            <td><a asp-action="Details" asp-controller="Categories" asp-route-Id="@c.CategoryId" class="btn btn-info">Details</a></td>
+
+        </tr>
+    }
+    </tbody>
+</table>
+
+
+
+
+</body>
+</html>
+
+
